@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mona</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: "Poppins", "Noto Sans JP", sans-serif;
+      background: linear-gradient(135deg, #090909 0%, #1a1a1a 100%);
+      color: #fff;
+    }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .lang-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .lang-toggle button {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .lang-toggle button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .lang {
+      display: none;
+    }
+    .lang.active {
+      display: block;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelector('.lang-' + lang).classList.add('active');
+      document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+    }
+  </script>
+</head>
+<body>
+  <div class="lang-toggle">
+    <button onclick="switchLang('ja')">日本語</button>
+    <button onclick="switchLang('en')">English</button>
+  </div>
+  <div class="container">
+    <div class="lang lang-ja active">
+      <h1>mona</h1>
+      <h2>OVER HUMAN INTELLIGENCE</h2>
+      <p>眠らず動く、超知性</p>
+    </div>
+    <div class="lang lang-en">
+      <h1>mona</h1>
+      <h2>OVER HUMAN INTELLIGENCE</h2>
+      <p>Unceasing in stride, SuperIntelligence</p>
+    </div>
+  </div>
+</body>
+</html>
+
