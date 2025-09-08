@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>mona - OVER HUMAN INTELLIGENCE</title>
+  <style>
+    body { font-family: sans-serif; display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; margin:0; background:#f5f5f5; }
+    h1 { margin:0; font-size:3rem; }
+    h2 { margin:0.5rem 0; }
+    .tagline { margin-top:1rem; font-size:1.5rem; }
+    .lang-buttons { position:fixed; top:1rem; right:1rem; }
+    button { margin-left:0.5rem; padding:0.3rem 0.8rem; }
+  </style>
+</head>
+<body>
+<div class="lang-buttons">
+  <button id="jp-btn">日本語</button>
+  <button id="en-btn">English</button>
+</div>
+<main id="content">
+  <h1>mona</h1>
+  <h2>OVER HUMAN INTELLIGENCE</h2>
+  <p class="tagline">眠らず動く、超知性</p>
+</main>
+<script>
+  const jpContent = { tagline: "眠らず動く、超知性", lang: "ja" };
+  const enContent = { tagline: "Unceasing in stride, SuperIntelligence", lang: "en" };
+
+  function setLang(content) {
+    document.documentElement.lang = content.lang;
+    document.querySelector('.tagline').textContent = content.tagline;
+  }
+
+  document.getElementById('jp-btn').addEventListener('click', () => setLang(jpContent));
+  document.getElementById('en-btn').addEventListener('click', () => setLang(enContent));
+</script>
+</body>
+</html>
